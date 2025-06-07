@@ -343,6 +343,74 @@ body {
   }
 }
 
+@keyframes moveParticle {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100px, -100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate(10px, -15px) scale(1.1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-5px, -25px) scale(0.9);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(-10px, -10px) scale(1.05);
+    opacity: 0.7;
+  }
+}
+
+@keyframes moveLine {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes particleDrift {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(20px, -30px) rotate(90deg);
+  }
+  50% {
+    transform: translate(-10px, -60px) rotate(180deg);
+  }
+  75% {
+    transform: translate(-30px, -30px) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
 .custom-spinner {
   animation: spin 1s linear infinite;
   background: var(--primary-gradient);
@@ -463,4 +531,46 @@ body {
 
 .morph-shape {
   animation: morphGlow 8s ease-in-out infinite;
+}
+
+/* Particle animation classes */
+.moving-particle {
+  animation: moveParticle linear infinite;
+}
+
+.floating-particle {
+  animation: floatParticle 6s ease-in-out infinite;
+}
+
+.moving-line {
+  animation: moveLine 20s linear infinite;
+}
+
+.drifting-particle {
+  animation: particleDrift 12s ease-in-out infinite;
+}
+
+/* Enhanced floating orb variations */
+.floating-orb {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-orb:nth-child(2) {
+  animation-delay: -2s;
+  animation-duration: 8s;
+}
+
+.floating-orb:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 10s;
+}
+
+.floating-orb:nth-child(4) {
+  animation-delay: -1s;
+  animation-duration: 7s;
+}
+
+.floating-orb:nth-child(5) {
+  animation-delay: -3s;
+  animation-duration: 9s;
 }

@@ -11,19 +11,38 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900">
       {/* Animated Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Primary gradient orbs */}
-        <div className="absolute top-20 left-10 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/10 blur-3xl animate-pulse"></div>
-        <div className="absolute top-1/3 right-20 w-80 h-80 rounded-full bg-gradient-to-br from-blue-500/15 to-cyan-500/10 blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute bottom-20 left-1/4 w-64 h-64 rounded-full bg-gradient-to-br from-indigo-500/15 to-purple-500/10 blur-3xl animate-pulse delay-2000"></div>
+        <div className="absolute top-20 left-10 w-96 h-96 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/10 blur-3xl animate-pulse floating-orb"></div>
+        <div className="absolute top-1/3 right-20 w-80 h-80 rounded-full bg-gradient-to-br from-blue-500/15 to-cyan-500/10 blur-3xl animate-pulse delay-1000 floating-orb"></div>
+        <div className="absolute bottom-20 left-1/4 w-64 h-64 rounded-full bg-gradient-to-br from-indigo-500/15 to-purple-500/10 blur-3xl animate-pulse delay-2000 floating-orb"></div>
         
-        {/* Floating particles */}
-        <div className="absolute top-1/4 left-1/3 w-2 h-2 rounded-full bg-purple-400/40 animate-float"></div>
-        <div className="absolute top-1/2 right-1/3 w-1 h-1 rounded-full bg-blue-400/60 animate-float delay-500"></div>
-        <div className="absolute bottom-1/3 left-2/3 w-1.5 h-1.5 rounded-full bg-pink-400/50 animate-float delay-1000"></div>
+        {/* Moving particles - small */}
+        <div className="absolute top-10 left-20 w-1 h-1 rounded-full bg-purple-400/60 moving-particle" style={{animationDelay: '0s', animationDuration: '8s'}}></div>
+        <div className="absolute top-32 right-40 w-0.5 h-0.5 rounded-full bg-blue-400/70 moving-particle" style={{animationDelay: '1s', animationDuration: '10s'}}></div>
+        <div className="absolute top-48 left-60 w-1.5 h-1.5 rounded-full bg-pink-400/50 moving-particle" style={{animationDelay: '2s', animationDuration: '12s'}}></div>
+        <div className="absolute top-64 right-80 w-1 h-1 rounded-full bg-cyan-400/60 moving-particle" style={{animationDelay: '3s', animationDuration: '9s'}}></div>
+        <div className="absolute top-80 left-32 w-0.5 h-0.5 rounded-full bg-indigo-400/70 moving-particle" style={{animationDelay: '4s', animationDuration: '11s'}}></div>
+        
+        {/* Moving particles - medium */}
+        <div className="absolute bottom-20 right-32 w-2 h-2 rounded-full bg-purple-400/40 moving-particle" style={{animationDelay: '0.5s', animationDuration: '15s'}}></div>
+        <div className="absolute bottom-40 left-48 w-1.5 h-1.5 rounded-full bg-blue-400/50 moving-particle" style={{animationDelay: '2.5s', animationDuration: '13s'}}></div>
+        <div className="absolute bottom-60 right-64 w-1 h-1 rounded-full bg-pink-400/60 moving-particle" style={{animationDelay: '1.5s', animationDuration: '14s'}}></div>
+        
+        {/* Moving particles - large floating */}
+        <div className="absolute top-1/4 left-1/3 w-3 h-3 rounded-full bg-gradient-to-r from-purple-400/30 to-pink-400/30 floating-particle" style={{animationDelay: '0s'}}></div>
+        <div className="absolute top-1/2 right-1/3 w-2 h-2 rounded-full bg-gradient-to-r from-blue-400/40 to-cyan-400/40 floating-particle" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-1/3 left-2/3 w-2.5 h-2.5 rounded-full bg-gradient-to-r from-indigo-400/35 to-purple-400/35 floating-particle" style={{animationDelay: '4s'}}></div>
+        <div className="absolute top-2/3 left-1/4 w-2 h-2 rounded-full bg-gradient-to-r from-pink-400/40 to-rose-400/40 floating-particle" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/6 right-1/4 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-cyan-400/50 to-blue-400/50 floating-particle" style={{animationDelay: '3s'}}></div>
         
         {/* Grid pattern overlay */}
         <div className="absolute inset-0 circuit-pattern opacity-30"></div>
+        
+        {/* Subtle moving lines */}
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-400/20 to-transparent moving-line" style={{animationDelay: '0s'}}></div>
+        <div className="absolute top-24 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/15 to-transparent moving-line" style={{animationDelay: '3s'}}></div>
+        <div className="absolute top-48 left-0 w-full h-px bg-gradient-to-r from-transparent via-pink-400/20 to-transparent moving-line" style={{animationDelay: '6s'}}></div>
       </div>
 
       <div className="container mx-auto px-6 text-center relative z-10">
@@ -36,15 +55,18 @@ export default function HeroSection() {
                 AI-Powered Character Fusion
               </span>
             </span>
+            <h1 className="text-2xl md:text-3xl font-display gradient-text mt-4 tracking-wide">
+              IconicDuo
+            </h1>
           </div>
 
           {/* Main title with enhanced effects */}
-          <h1 className="text-7xl md:text-9xl font-display gradient-text mb-8 tracking-tight relative">
+          <h2 className="text-7xl md:text-9xl font-display gradient-text mb-8 tracking-tight relative">
             <span className="relative inline-block">
-              IconicDuo
+              Create Your Duo
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600/20 to-pink-600/20 blur-xl opacity-75"></div>
             </span>
-          </h1>
+          </h2>
 
           {/* Enhanced subtitle */}
           <p className="text-2xl md:text-4xl text-slate-300 mb-4 font-medium leading-relaxed">

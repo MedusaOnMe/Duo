@@ -27,8 +27,12 @@ export default function Header({ onMenuClick }: HeaderProps) {
           {/* Enhanced Logo */}
           <Link href="/" className="group flex items-center gap-4 transition-all duration-300 hover:scale-105">
             <div className="relative">
-              <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/25 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-purple-500/40">
-                <span className="text-2xl filter drop-shadow-sm">⚡</span>
+              <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl overflow-hidden shadow-lg shadow-purple-500/25 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-purple-500/40">
+                <img 
+                  src="/main.png" 
+                  alt="IconicDuos Logo"
+                  className="w-full h-full object-cover filter drop-shadow-sm"
+                />
               </div>
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
             </div>

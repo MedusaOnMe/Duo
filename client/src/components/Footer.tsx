@@ -18,8 +18,12 @@ export default function Footer() {
           <div className="flex-1">
             <Link href="/" className="group flex items-center gap-4 mb-6">
               <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/25">
-                  <span className="text-xl">⚡</span>
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl overflow-hidden shadow-lg shadow-purple-500/25">
+                  <img 
+                    src="/main.png" 
+                    alt="IconicDuos Logo"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl blur-xl opacity-30"></div>
               </div>

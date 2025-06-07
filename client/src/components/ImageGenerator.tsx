@@ -296,37 +296,61 @@ export default function ImageGenerator() {
   };
 
   return (
-    <section id="image-generator" className="py-16 relative">
-      <div className="container px-6 mx-auto max-w-4xl">
-        {/* Simple Header */}
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-display gradient-text mb-4">
+    <section id="image-generator" className="py-24 relative bg-gradient-to-br from-slate-900/50 via-purple-900/10 to-slate-900/50">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-10 right-10 w-72 h-72 rounded-full bg-gradient-to-br from-blue-500/10 to-cyan-500/5 blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-64 h-64 rounded-full bg-gradient-to-br from-purple-500/10 to-pink-500/5 blur-3xl"></div>
+        <div className="absolute inset-0 dot-pattern opacity-20"></div>
+      </div>
+      
+      <div className="container px-6 mx-auto max-w-6xl relative z-10">
+        {/* Enhanced Header */}
+        <div className="text-center mb-16">
+          <div className="mb-6">
+            <span className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20">
+              <div className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 mr-2 animate-pulse"></div>
+              <span className="text-sm font-medium text-slate-300">AI Character Fusion Engine</span>
+            </span>
+          </div>
+          
+          <h2 className="text-5xl md:text-6xl font-display gradient-text mb-6 tracking-tight">
             Create Your IconicDuo
           </h2>
-          <p className="text-lg text-hsl(var(--muted-foreground)) max-w-2xl mx-auto">
-            Upload two character images and watch as AI seamlessly merges them into one stunning scene
+          
+          <p className="text-xl md:text-2xl text-slate-300 mb-4 max-w-3xl mx-auto leading-relaxed">
+            Upload two character images and watch as AI seamlessly merges them into one 
+            <span className="gradient-text-accent font-semibold"> legendary </span>
+            scene
+          </p>
+          
+          <p className="text-base text-slate-400 max-w-2xl mx-auto">
+            Our advanced AI technology analyzes both characters and creates natural, believable interactions between them
           </p>
         </div>
         
-        {/* Main Card */}
-        <Card className="glass border-border/20">
-          <CardContent className="p-8">
-            <form onSubmit={handleSubmit} className="space-y-8">
-              {/* Upload Section */}
-              <div className="grid md:grid-cols-2 gap-6">
+        {/* Enhanced Main Card */}
+        <Card className="modern-card backdrop-blur-2xl border-purple-500/20 shadow-2xl shadow-purple-500/10">
+          <CardContent className="p-10">
+            <form onSubmit={handleSubmit} className="space-y-10">
+              {/* Upload Section with enhanced design */}
+              <div className="grid md:grid-cols-2 gap-8">
                 {/* First Image Upload */}
-                <div className="space-y-3">
-                  <Label htmlFor="upload-image1" className="text-lg font-display gradient-text">
-                    Character 1
-                  </Label>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-sm">1</div>
+                    <Label htmlFor="upload-image1" className="text-xl font-display gradient-text">
+                      First Character
+                    </Label>
+                  </div>
                   
                   <div 
-                    className={`border-2 border-dashed rounded-lg p-6 text-center transition-all duration-300 ${
+                    className={`group relative border-2 border-dashed rounded-2xl p-8 text-center transition-all duration-500 ${
                       dragActive 
-                        ? 'border-purple-400 bg-purple-500/5' 
+                        ? 'border-purple-400 bg-purple-500/10 scale-105' 
                         : imagePreview1 
-                          ? 'border-green-400 bg-green-500/5' 
-                          : 'border-border hover:border-purple-400 hover:bg-purple-500/5'
+                          ? 'border-green-400 bg-green-500/10 shadow-lg shadow-green-500/20' 
+                          : 'border-slate-600 hover:border-purple-400 hover:bg-purple-500/5 hover:scale-105'
                     }`}
                     onDragOver={handleDragOver}
                     onDragLeave={handleDragLeave}
@@ -337,11 +361,11 @@ export default function ImageGenerator() {
                         <img 
                           src={imagePreview1} 
                           alt="Character 1" 
-                          className="max-h-48 mx-auto rounded-lg shadow-lg"
+                          className="max-h-56 mx-auto rounded-xl shadow-2xl border border-white/10"
                         />
                         <button 
                           type="button"
-                          className="absolute top-2 right-2 w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"
+                          className="absolute -top-2 -right-2 w-10 h-10 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg"
                           onClick={() => {
                             if (imagePreview1) {
                               URL.revokeObjectURL(imagePreview1);
@@ -351,20 +375,29 @@ export default function ImageGenerator() {
                             if (fileInputRef1.current) fileInputRef1.current.value = '';
                           }}
                         >
-                          ×
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                          </svg>
                         </button>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"></div>
                       </div>
                     ) : (
                       <>
-                        <div className="text-4xl mb-3">👤</div>
-                        <h3 className="text-lg font-display gradient-text mb-2">Drop first character here</h3>
-                        <p className="text-muted-foreground mb-4">or click to browse</p>
+                        <div className="text-6xl mb-4 group-hover:scale-110 transition-transform">🎭</div>
+                        <h3 className="text-xl font-display gradient-text mb-3">Drop your first character</h3>
+                        <p className="text-slate-400 mb-6 text-sm">Drag & drop or click to browse</p>
                         <button 
                           type="button" 
-                          className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all"
+                          className="group relative overflow-hidden bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-xl font-semibold transition-all hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
                           onClick={() => fileInputRef1.current?.click()}
                         >
-                          Choose Image
+                          <span className="relative z-10 flex items-center gap-2">
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                            </svg>
+                            Choose Image
+                          </span>
+                          <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                         </button>
                       </>
                     )}
@@ -379,19 +412,32 @@ export default function ImageGenerator() {
                   </div>
                 </div>
 
+                {/* Fusion Icon */}
+                <div className="hidden md:flex items-center justify-center">
+                  <div className="relative">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 flex items-center justify-center text-white text-2xl animate-pulse">
+                      ⚡
+                    </div>
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 blur-xl opacity-30 animate-pulse"></div>
+                  </div>
+                </div>
+
                 {/* Second Image Upload */}
-                <div className="space-y-3">
-                  <Label htmlFor="upload-image2" className="text-lg font-display gradient-text">
-                    Character 2
-                  </Label>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm">2</div>
+                    <Label htmlFor="upload-image2" className="text-xl font-display gradient-text-accent">
+                      Second Character
+                    </Label>
+                  </div>
                   
                   <div 
-                    className={`border-2 border-dashed rounded-lg p-6 text-center transition-all duration-300 ${
+                    className={`group relative border-2 border-dashed rounded-2xl p-8 text-center transition-all duration-500 ${
                       dragActive 
-                        ? 'border-purple-400 bg-purple-500/5' 
+                        ? 'border-blue-400 bg-blue-500/10 scale-105' 
                         : imagePreview2 
-                          ? 'border-green-400 bg-green-500/5' 
-                          : 'border-border hover:border-purple-400 hover:bg-purple-500/5'
+                          ? 'border-green-400 bg-green-500/10 shadow-lg shadow-green-500/20' 
+                          : 'border-slate-600 hover:border-blue-400 hover:bg-blue-500/5 hover:scale-105'
                     }`}
                     onDragOver={handleDragOver}
                     onDragLeave={handleDragLeave}
@@ -402,11 +448,11 @@ export default function ImageGenerator() {
                         <img 
                           src={imagePreview2} 
                           alt="Character 2" 
-                          className="max-h-48 mx-auto rounded-lg shadow-lg"
+                          className="max-h-56 mx-auto rounded-xl shadow-2xl border border-white/10"
                         />
                         <button 
                           type="button"
-                          className="absolute top-2 right-2 w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"
+                          className="absolute -top-2 -right-2 w-10 h-10 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg"
                           onClick={() => {
                             if (imagePreview2) {
                               URL.revokeObjectURL(imagePreview2);
@@ -416,20 +462,29 @@ export default function ImageGenerator() {
                             if (fileInputRef2.current) fileInputRef2.current.value = '';
                           }}
                         >
-                          ×
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                          </svg>
                         </button>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"></div>
                       </div>
                     ) : (
                       <>
-                        <div className="text-4xl mb-3">👤</div>
-                        <h3 className="text-lg font-display gradient-text mb-2">Drop second character here</h3>
-                        <p className="text-muted-foreground mb-4">or click to browse</p>
+                        <div className="text-6xl mb-4 group-hover:scale-110 transition-transform">🎪</div>
+                        <h3 className="text-xl font-display gradient-text-accent mb-3">Drop your second character</h3>
+                        <p className="text-slate-400 mb-6 text-sm">Drag & drop or click to browse</p>
                         <button 
                           type="button" 
-                          className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-4 py-2 rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all"
+                          className="group relative overflow-hidden bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-xl font-semibold transition-all hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
                           onClick={() => fileInputRef2.current?.click()}
                         >
-                          Choose Image
+                          <span className="relative z-10 flex items-center gap-2">
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                            </svg>
+                            Choose Image
+                          </span>
+                          <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                         </button>
                       </>
                     )}
@@ -445,23 +500,38 @@ export default function ImageGenerator() {
                 </div>
               </div>
               
-              {/* Merge Button */}
-              <Button 
-                type="submit" 
-                className="w-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-white text-lg font-display py-4 hover:from-purple-600 hover:via-pink-600 hover:to-blue-600 transition-all"
-                disabled={processMutation.isPending || !imageFile1 || !imageFile2}
-              >
-                {processMutation.isPending ? (
-                  <span className="flex items-center gap-2">
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    Creating IconicDuo...
-                  </span>
-                ) : (
-                  <span className="flex items-center gap-2">
-                    👥 Create IconicDuo
-                  </span>
+              {/* Enhanced Merge Button */}
+              <div className="relative">
+                <Button 
+                  type="submit" 
+                  className="group relative w-full overflow-hidden bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:from-purple-700 hover:via-pink-700 hover:to-blue-700 text-white text-xl font-display py-6 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 disabled:opacity-50 disabled:hover:scale-100"
+                  disabled={processMutation.isPending || !imageFile1 || !imageFile2}
+                >
+                  {processMutation.isPending ? (
+                    <span className="relative z-10 flex items-center justify-center gap-3">
+                      <div className="w-6 h-6 border-3 border-white border-t-transparent rounded-full animate-spin"></div>
+                      <span>Creating your legendary duo...</span>
+                    </span>
+                  ) : (
+                    <span className="relative z-10 flex items-center justify-center gap-3">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                      <span>Fuse Characters</span>
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </span>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                </Button>
+                
+                {(!imageFile1 || !imageFile2) && (
+                  <p className="text-center text-slate-400 text-sm mt-3">
+                    Upload both characters to enable fusion
+                  </p>
                 )}
-              </Button>
+              </div>
             </form>
           </CardContent>
         </Card>

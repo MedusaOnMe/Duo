@@ -81,13 +81,13 @@ export default function GallerySection() {
             </span>
           </div>
           
-          <h2 className="text-5xl md:text-6xl font-display gradient-text mb-6 tracking-tight">
+          <h2 className="text-5xl md:text-6xl font-display gradient-text mb-6 tracking-tight animate-gradient-shift">
             IconicDuo Gallery
           </h2>
           
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed animate-fade-in-up">
             Discover amazing character fusions created by our 
-            <span className="gradient-text-accent font-semibold"> legendary </span>
+            <span className="gradient-text-accent font-semibold animate-pulse-subtle"> iconic </span>
             community
           </p>
         </div>

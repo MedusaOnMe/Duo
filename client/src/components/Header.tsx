@@ -59,13 +59,10 @@ export default function Header({ onMenuClick }: HeaderProps) {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/20 group-hover:to-cyan-500/20 rounded-xl transition-all duration-300"></div>
             </Link>
             
-            {/* Social Link */}
-            <a
-              href="https://x.com/i/communities/1930184588879335841"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* Social Icon */}
+            <div
               className="group ml-4 p-3 bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-xl border border-slate-600/30 hover:border-purple-500/40 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20"
-              aria-label="Follow us on X (Twitter)"
+              aria-label="X (Twitter)"
             >
               <svg
                 className="w-5 h-5 text-slate-300 group-hover:text-white transition-colors duration-300"
@@ -75,7 +72,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
               >
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
-            </a>
+            </div>
           </nav>
 
           {/* Enhanced Mobile Menu Button */}

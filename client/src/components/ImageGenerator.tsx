@@ -314,13 +314,13 @@ export default function ImageGenerator() {
             </span>
           </div>
           
-          <h2 className="text-5xl md:text-6xl font-display gradient-text mb-6 tracking-tight">
+          <h2 className="text-5xl md:text-6xl font-display gradient-text mb-6 tracking-tight animate-gradient-shift">
             Create Your IconicDuo
           </h2>
           
-          <p className="text-xl md:text-2xl text-slate-300 mb-4 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-slate-300 mb-4 max-w-3xl mx-auto leading-relaxed animate-fade-in-up">
             Upload two character images and watch as AI seamlessly merges them into one 
-            <span className="gradient-text-accent font-semibold"> legendary </span>
+            <span className="gradient-text-accent font-semibold animate-pulse-subtle"> iconic </span>
             scene
           </p>
           
@@ -334,7 +334,7 @@ export default function ImageGenerator() {
           <CardContent className="p-10">
             <form onSubmit={handleSubmit} className="space-y-10">
               {/* Upload Section with enhanced design */}
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-12">
                 {/* First Image Upload */}
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 mb-4">
@@ -409,16 +409,6 @@ export default function ImageGenerator() {
                       accept="image/*"
                       onChange={(e) => handleFileChange(e, 1)}
                     />
-                  </div>
-                </div>
-
-                {/* Fusion Icon */}
-                <div className="hidden md:flex items-center justify-center">
-                  <div className="relative">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 flex items-center justify-center text-white text-2xl animate-pulse">
-                      ⚡
-                    </div>
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 blur-xl opacity-30 animate-pulse"></div>
                   </div>
                 </div>
 

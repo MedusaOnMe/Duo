@@ -66,18 +66,18 @@ export default function HeroSection() {
           </div>
 
           {/* Main CTA title */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-slate-200 mb-8 tracking-tight">
-            Create Your Legendary Duo
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-slate-200 mb-8 tracking-tight animate-text-glow">
+            Create an Iconic Duo
           </h2>
 
           {/* Enhanced subtitle */}
-          <p className="text-2xl md:text-4xl text-slate-300 mb-4 font-medium leading-relaxed">
+          <p className="text-2xl md:text-4xl text-slate-300 mb-4 font-medium leading-relaxed animate-fade-in-up">
             Merge two characters into 
-            <span className="gradient-text-accent font-bold"> legendary </span>
+            <span className="gradient-text-accent font-bold animate-pulse-subtle"> iconic </span>
             creations
           </p>
           
-          <p className="text-lg md:text-xl text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in-delayed">
             Experience the magic of AI as it seamlessly blends iconic characters into stunning, 
             unique artwork that captures the essence of both worlds.
           </p>
@@ -138,12 +138,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-purple-400/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-gradient-to-b from-purple-400 to-pink-400 rounded-full mt-2 animate-pulse"></div>
-        </div>
-      </div>
     </section>
   );
 }

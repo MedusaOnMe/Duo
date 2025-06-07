@@ -411,6 +411,64 @@ body {
   }
 }
 
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(148, 163, 184, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(148, 163, 184, 0.6), 0 0 30px rgba(148, 163, 184, 0.4);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes fadeInUpDelayed {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes colorShift {
+  0%, 100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(30deg);
+  }
+}
+
 .custom-spinner {
   animation: spin 1s linear infinite;
   background: var(--primary-gradient);
@@ -436,27 +494,7 @@ body {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* Utility classes */
-.gradient-text {
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gradient-text-secondary {
-  background: var(--secondary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gradient-text-accent {
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+/* Utility classes - moved to bottom with animations */
 
 /* Modern card variants */
 .iconic-card {
@@ -573,4 +611,62 @@ body {
 .floating-orb:nth-child(5) {
   animation-delay: -3s;
   animation-duration: 9s;
+}
+
+/* Subtle text animations */
+.animate-text-glow {
+  animation: textGlow 4s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-fade-in-delayed {
+  animation: fadeInUpDelayed 1s ease-out 0.3s both;
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.animate-color-shift {
+  animation: colorShift 8s ease-in-out infinite;
+}
+
+/* Enhanced gradient text with animation */
+.gradient-text {
+  background: var(--primary-gradient);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 6s ease-in-out infinite;
+}
+
+.gradient-text-secondary {
+  background: var(--secondary-gradient);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 8s ease-in-out infinite;
+}
+
+.gradient-text-accent {
+  background: var(--accent-gradient);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 7s ease-in-out infinite;
 }

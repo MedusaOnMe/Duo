@@ -48,24 +48,26 @@ export default function HeroSection() {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Pre-title badge */}
-          <div className="mb-8">
+          <div className="mb-12">
             <span className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 backdrop-blur-sm">
               <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 mr-3 animate-pulse"></div>
               <span className="text-sm font-medium gradient-text-secondary">
                 AI-Powered Character Fusion
               </span>
             </span>
-            <h1 className="text-2xl md:text-3xl font-display gradient-text mt-4 tracking-wide">
-              IconicDuo
+            
+            {/* Site Title */}
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display gradient-text mt-8 mb-6 tracking-tight relative">
+              <span className="relative inline-block">
+                IconicDuo
+                <div className="absolute -inset-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 blur-2xl opacity-75"></div>
+              </span>
             </h1>
           </div>
 
-          {/* Main title with enhanced effects */}
-          <h2 className="text-7xl md:text-9xl font-display gradient-text mb-8 tracking-tight relative">
-            <span className="relative inline-block">
-              Create Your Duo
-              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600/20 to-pink-600/20 blur-xl opacity-75"></div>
-            </span>
+          {/* Main CTA title */}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-slate-200 mb-8 tracking-tight">
+            Create Your Legendary Duo
           </h2>
 
           {/* Enhanced subtitle */}

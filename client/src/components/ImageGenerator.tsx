@@ -121,7 +121,7 @@ export default function ImageGenerator() {
     if (!imageFile1 || !imageFile2) {
       toast.error({
         title: "Missing Images",
-        description: "Please upload both images before creating your IconicDuo"
+        description: "Please upload both images before creating your IconicDuos"
       });
       return;
     }
@@ -305,7 +305,7 @@ export default function ImageGenerator() {
           </div>
           
           <h2 className="text-5xl md:text-6xl font-display gradient-text mb-6 tracking-tight animate-gradient-shift">
-            Create Your IconicDuo
+            Create Your IconicDuos
           </h2>
           
           <p className="text-xl md:text-2xl text-slate-300 mb-4 max-w-3xl mx-auto leading-relaxed animate-fade-in-up">
@@ -527,7 +527,7 @@ export default function ImageGenerator() {
               {processMutation.isPending || isUpdating ? (
                 <div className="text-center py-16">
                   <div className="w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-                  <h4 className="text-lg font-display gradient-text mb-2">Creating your IconicDuo...</h4>
+                  <h4 className="text-lg font-display gradient-text mb-2">Creating your IconicDuos...</h4>
                   <p className="text-muted-foreground">This may take a moment as we merge your characters seamlessly</p>
                 </div>
               ) : processMutation.isError ? (
@@ -543,7 +543,7 @@ export default function ImageGenerator() {
                   <div className="inline-block rounded-lg overflow-hidden p-4 bg-gradient-to-br from-purple-500/10 to-pink-500/10 shadow-lg">
                     <img 
                       src={processMutation.data?.url} 
-                      alt="IconicDuo Creation"
+                      alt="IconicDuos Creation"
                       className="max-w-full max-h-96 rounded-lg"
                     />
                   </div>
@@ -569,7 +569,7 @@ export default function ImageGenerator() {
                           
                           toast.success({
                             title: "Download successful!",
-                            description: "Your IconicDuo creation has been saved"
+                            description: "Your IconicDuos creation has been saved"
                           });
                         } catch (error) {
                           toast.error({
@@ -579,14 +579,14 @@ export default function ImageGenerator() {
                         }
                       }}
                     >
-                      Download IconicDuo
+                      Download IconicDuos
                     </button>
                   </div>
                 </div>
               ) : (
                 <div className="text-center py-16">
                   <div className="text-8xl mb-6">👥</div>
-                  <h4 className="text-xl font-display gradient-text mb-2">Ready to create your IconicDuo?</h4>
+                  <h4 className="text-xl font-display gradient-text mb-2">Ready to create your IconicDuos?</h4>
                   <p className="text-muted-foreground max-w-lg mx-auto">
                     Upload two character images and let AI create a stunning merged scene
                   </p>

@@ -59,7 +59,7 @@ export default function HeroSection() {
             {/* Site Title */}
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-display mt-8 mb-6 tracking-tight relative z-20">
               <span className="relative inline-block z-30 gradient-text">
-                IconicDuo
+                IconicDuos
                 <div className="absolute -inset-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 blur-2xl opacity-75 -z-10"></div>
               </span>
             </h1>
@@ -77,10 +77,27 @@ export default function HeroSection() {
             creations
           </p>
           
-          <p className="text-lg md:text-xl text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in-delayed">
+          <p className="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in-delayed">
             Experience the magic of AI as it seamlessly blends iconic characters into stunning, 
             unique artwork that captures the essence of both worlds.
           </p>
+
+          {/* Example Image */}
+          <div className="mb-12 animate-fade-in-delayed">
+            <div className="relative inline-block rounded-2xl overflow-hidden shadow-2xl shadow-purple-500/20 border border-purple-500/20">
+              <img 
+                src="/main.png" 
+                alt="Example of character fusion - two characters merged into one scene"
+                className="max-w-full h-auto max-h-64 md:max-h-80 rounded-2xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <p className="text-white text-sm font-medium bg-black/30 backdrop-blur-sm rounded-lg px-3 py-2">
+                  ✨ Example: Two characters seamlessly merged into one scene
+                </p>
+              </div>
+            </div>
+          </div>
 
           {/* Enhanced CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
@@ -92,7 +109,7 @@ export default function HeroSection() {
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                Create Iconic Duo
+                Create IconicDuos
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
             </Button>

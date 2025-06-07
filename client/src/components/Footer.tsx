@@ -25,7 +25,7 @@ export default function Footer() {
               </div>
               <div>
                 <span className="font-display text-2xl font-bold gradient-text">
-                  IconicDuo
+                  IconicDuos
                 </span>
                 <div className="text-xs text-slate-400 font-medium tracking-wider">
                   AI CHARACTER FUSION
@@ -102,7 +102,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
             <p className="text-slate-400 text-sm mb-2">
-              © {currentYear} IconicDuo. All rights reserved.
+              © {currentYear} IconicDuos. All rights reserved.
             </p>
             <p className="text-slate-500 text-xs">
               Powered by advanced AI technology for character fusion and creative expression.

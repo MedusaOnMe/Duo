@@ -34,7 +34,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
             </div>
             <div className="flex flex-col">
               <span className="font-display text-2xl font-bold gradient-text leading-tight">
-                IconicDuo
+                IconicDuos
               </span>
               <span className="text-xs text-slate-400 font-medium tracking-wider">
                 AI CHARACTER FUSION

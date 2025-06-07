@@ -82,7 +82,7 @@ export default function GallerySection() {
           </div>
           
           <h2 className="text-5xl md:text-6xl font-display gradient-text mb-6 tracking-tight animate-gradient-shift">
-            IconicDuo Gallery
+            IconicDuos Gallery
           </h2>
           
           <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed animate-fade-in-up">
@@ -131,7 +131,7 @@ export default function GallerySection() {
                 <div className="aspect-square overflow-hidden relative">
                   <img 
                     src={image.url} 
-                    alt="IconicDuo creation" 
+                    alt="IconicDuos creation" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy" 
                   />
@@ -152,7 +152,7 @@ export default function GallerySection() {
                 
                 {/* Image info overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-white text-sm font-medium mb-1">IconicDuo Creation</p>
+                  <p className="text-white text-sm font-medium mb-1">IconicDuos Creation</p>
                   <p className="text-slate-300 text-xs">
                     {new Date(image.timestamp).toLocaleDateString()}
                   </p>
@@ -170,7 +170,7 @@ export default function GallerySection() {
               No Creations Yet
             </h3>
             <p className="text-slate-400 mb-8 text-lg leading-relaxed">
-              Be the first to create an amazing IconicDuo fusion! 
+              Be the first to create an amazing IconicDuos fusion! 
               Your masterpiece could be the start of an incredible gallery.
             </p>
             <Button 
@@ -182,7 +182,7 @@ export default function GallerySection() {
                 }
               }}
             >
-              Create First IconicDuo
+              Create First IconicDuos
             </Button>
           </div>
         )}
@@ -210,7 +210,7 @@ export default function GallerySection() {
               
               <div className="p-8">
                 <h3 className="text-2xl font-display gradient-text mb-2">
-                  IconicDuo Creation
+                  IconicDuos Creation
                 </h3>
                 <p className="text-sm text-hsl(var(--muted-foreground)) mb-6 font-mono">
                   Created: {new Date(selectedImage.timestamp).toLocaleString()}

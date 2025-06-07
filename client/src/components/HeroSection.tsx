@@ -57,8 +57,8 @@ export default function HeroSection() {
             </span>
             
             {/* Site Title */}
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display gradient-text text-white mt-8 mb-6 tracking-tight relative z-20" style={{color: 'white'}}>
-              <span className="relative inline-block z-30 gradient-text" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'}}>
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display mt-8 mb-6 tracking-tight relative z-20">
+              <span className="relative inline-block z-30 gradient-text">
                 IconicDuo
                 <div className="absolute -inset-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 blur-2xl opacity-75 -z-10"></div>
               </span>

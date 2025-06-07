@@ -45,8 +45,8 @@ export default function HeroSection() {
         <div className="absolute top-48 left-0 w-full h-px bg-gradient-to-r from-transparent via-pink-400/20 to-transparent moving-line" style={{animationDelay: '6s'}}></div>
       </div>
 
-      <div className="container mx-auto px-6 text-center relative z-10">
-        <div className="max-w-5xl mx-auto">
+      <div className="container mx-auto px-6 text-center relative z-20">
+        <div className="max-w-5xl mx-auto relative z-30">
           {/* Pre-title badge */}
           <div className="mb-12">
             <span className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 backdrop-blur-sm">
@@ -57,10 +57,10 @@ export default function HeroSection() {
             </span>
             
             {/* Site Title */}
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display gradient-text mt-8 mb-6 tracking-tight relative">
-              <span className="relative inline-block">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-display gradient-text text-white mt-8 mb-6 tracking-tight relative z-20" style={{color: 'white'}}>
+              <span className="relative inline-block z-30 gradient-text" style={{WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'}}>
                 IconicDuo
-                <div className="absolute -inset-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 blur-2xl opacity-75"></div>
+                <div className="absolute -inset-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 blur-2xl opacity-75 -z-10"></div>
               </span>
             </h1>
           </div>

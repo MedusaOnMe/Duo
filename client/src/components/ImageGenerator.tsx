@@ -108,10 +108,9 @@ export default function ImageGenerator() {
     },
     onError: (error) => {
       setIsUpdating(false);
-      toast({
+      toast.error({
         title: "Error",
-        description: error instanceof Error ? error.message : "Failed to process images",
-        variant: "destructive"
+        description: error instanceof Error ? error.message : "Failed to process images"
       });
     }
   });
@@ -120,10 +119,9 @@ export default function ImageGenerator() {
     e.preventDefault();
     
     if (!imageFile1 || !imageFile2) {
-      toast({
+      toast.error({
         title: "Missing Images",
-        description: "Please upload both images before creating your IconicDuo",
-        variant: "destructive"
+        description: "Please upload both images before creating your IconicDuo"
       });
       return;
     }
@@ -148,20 +146,18 @@ export default function ImageGenerator() {
     
     if (file) {
       if (!file.type.startsWith('image/')) {
-        toast({
+        toast.error({
           title: "Invalid file type",
-          description: `File type ${file.type} is not a supported image format`,
-          variant: "destructive"
+          description: `File type ${file.type} is not a supported image format`
         });
         return;
       }
       
       const maxSizeInBytes = 4 * 1024 * 1024; // 4MB
       if (file.size > maxSizeInBytes) {
-        toast({
+        toast.error({
           title: "File too large",
-          description: `Image is too large (${(file.size / 1024 / 1024).toFixed(2)}MB). Maximum size is 4MB.`,
-          variant: "destructive"
+          description: `Image is too large (${(file.size / 1024 / 1024).toFixed(2)}MB). Maximum size is 4MB.`
         });
         return;
       }
@@ -172,10 +168,9 @@ export default function ImageGenerator() {
         
         img.onerror = () => {
           URL.revokeObjectURL(objectUrl);
-          toast({
+          toast.error({
             title: "Invalid image",
-            description: "Unable to load image. The file may be corrupted or not a valid image.",
-            variant: "destructive"
+            description: "Unable to load image. The file may be corrupted or not a valid image."
           });
         };
         
@@ -191,10 +186,9 @@ export default function ImageGenerator() {
         
         img.src = objectUrl;
       } catch (error) {
-        toast({
+        toast.error({
           title: "Error processing image",
-          description: "An error occurred while processing the image file.",
-          variant: "destructive"
+          description: "An error occurred while processing the image file."
         });
       }
     } else {
@@ -235,20 +229,18 @@ export default function ImageGenerator() {
     
     if (file) {
       if (!file.type.startsWith('image/')) {
-        toast({
+        toast.error({
           title: "Invalid file type",
-          description: `File type ${file.type} is not a supported image format`,
-          variant: "destructive"
+          description: `File type ${file.type} is not a supported image format`
         });
         return;
       }
       
       const maxSizeInBytes = 4 * 1024 * 1024; // 4MB
       if (file.size > maxSizeInBytes) {
-        toast({
+        toast.error({
           title: "File too large",
-          description: `Image is too large (${(file.size / 1024 / 1024).toFixed(2)}MB). Maximum size is 4MB.`,
-          variant: "destructive"
+          description: `Image is too large (${(file.size / 1024 / 1024).toFixed(2)}MB). Maximum size is 4MB.`
         });
         return;
       }
@@ -259,10 +251,9 @@ export default function ImageGenerator() {
         
         img.onerror = () => {
           URL.revokeObjectURL(objectUrl);
-          toast({
+          toast.error({
             title: "Invalid image",
-            description: "Unable to load image. The file may be corrupted or not a valid image.",
-            variant: "destructive"
+            description: "Unable to load image. The file may be corrupted or not a valid image."
           });
         };
         
@@ -278,10 +269,9 @@ export default function ImageGenerator() {
         
         img.src = objectUrl;
       } catch (error) {
-        toast({
+        toast.error({
           title: "Error processing image",
-          description: "An error occurred while processing the dropped image file.",
-          variant: "destructive"
+          description: "An error occurred while processing the dropped image file."
         });
       }
     } else {
@@ -365,8 +355,10 @@ export default function ImageGenerator() {
                         />
                         <button 
                           type="button"
-                          className="absolute -top-2 -right-2 w-10 h-10 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg"
-                          onClick={() => {
+                          className="absolute -top-2 -right-2 w-10 h-10 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg z-10"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
                             if (imagePreview1) {
                               URL.revokeObjectURL(imagePreview1);
                             }
@@ -442,8 +434,10 @@ export default function ImageGenerator() {
                         />
                         <button 
                           type="button"
-                          className="absolute -top-2 -right-2 w-10 h-10 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg"
-                          onClick={() => {
+                          className="absolute -top-2 -right-2 w-10 h-10 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg z-10"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
                             if (imagePreview2) {
                               URL.revokeObjectURL(imagePreview2);
                             }
@@ -564,25 +558,23 @@ export default function ImageGenerator() {
                           const imageId = processMutation.data?.id || 'iconicduo';
                           
                           if (!imageUrl) {
-                            toast({
+                            toast.error({
                               title: "Download failed",
-                              description: "No image URL available for download",
-                              variant: "destructive"
+                              description: "No image URL available for download"
                             });
                             return;
                           }
                           
                           await downloadImage(imageUrl, `iconicduo-${imageId}`);
                           
-                          toast({
+                          toast.success({
                             title: "Download successful!",
                             description: "Your IconicDuo creation has been saved"
                           });
                         } catch (error) {
-                          toast({
+                          toast.error({
                             title: "Download failed",
-                            description: error instanceof Error ? error.message : "Failed to download image",
-                            variant: "destructive"
+                            description: error instanceof Error ? error.message : "Failed to download image"
                           });
                         }
                       }}
